@@ -28,11 +28,11 @@ public class HTTPUtil  extends  Thread{
     public String  signin(String user_id,String password ){
         try {
             RequestBody query = new FormEncodingBuilder()
-                    .add("user_id", user_id)
-                    .add("password", password)
+                    .add("uemail", user_id)
+                    .add("upasswd", password)
                     .build();
             request = new Request.Builder()
-                    .url(base_url + "/api/user/signin")
+                    .url(base_url + "/var/www/html")
                     .post(query)
                     .build();
             response = client.newCall(request).execute();
@@ -50,7 +50,7 @@ public class HTTPUtil  extends  Thread{
         try {
             RequestBody query =RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonString);
             request = new Request.Builder()
-                    .url(base_url + "/api/user/signin")
+                    .url(base_url + "/var/www/html")
                     .post(query)
                     .build();
             response = client.newCall(request).execute();

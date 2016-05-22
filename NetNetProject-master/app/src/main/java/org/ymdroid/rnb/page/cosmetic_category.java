@@ -20,7 +20,7 @@ import org.ymdroid.rnb.event.ListViewAdapter;
 /**
  * Created by kimminyoung on 2016-05-05.
  */
-public class cosmetic_category extends ActionBarActivity implements AdapterView.OnItemSelectedListener
+public class Cosmetic_category extends ActionBarActivity implements AdapterView.OnItemSelectedListener
         {
 
 
@@ -58,7 +58,7 @@ public class cosmetic_category extends ActionBarActivity implements AdapterView.
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 ListData mData = mAdapter.mListData.get(position);
-                Toast.makeText(cosmetic_category.this, mData.mTitle, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Cosmetic_category.this, mData.mTitle, Toast.LENGTH_SHORT).show();
             }
         });
 

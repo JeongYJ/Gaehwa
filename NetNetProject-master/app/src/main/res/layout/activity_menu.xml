@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".page.menu"
+    tools:context=".page.Menu"
     android:focusable="true"
     android:background="@drawable/gaehwa_menu">
 
@@ -19,7 +19,7 @@
         android:gravity="center"
         android:weightSum="1">
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_barcode_orig"
@@ -30,7 +30,7 @@
             android:layout_alignParentEnd="true"
             android:onClick="capture_barcode_click" />
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_ingtable_orig"
@@ -41,11 +41,11 @@
             android:layout_alignParentEnd="true"
             android:onClick="capture_cosmetic_click" />
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_cosinfo_orig"
-            android:id="@+id/btn_myrobot"
+            android:id="@+id/btn_cosmetic_info"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/bt_cosmetic_info"
             android:layout_alignParentRight="true"
@@ -53,11 +53,11 @@
             android:onClick="cosmetic_info_click" />
 
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_ingintro_orig"
-            android:id="@+id/btn_mymusic"
+            android:id="@+id/btn_ingredient"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/bt_cosmetic_ingredient"
             android:layout_alignParentRight="true"
@@ -65,11 +65,11 @@
             android:onClick="cosmetic_ingredient_click" />
 
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_mypage_orig"
-            android:id="@+id/btn_mystory"
+            android:id="@+id/btn_mypage"
             android:layout_marginTop="15dp"
             android:layout_below="@+id/bt_mypage"
             android:layout_alignParentRight="true"

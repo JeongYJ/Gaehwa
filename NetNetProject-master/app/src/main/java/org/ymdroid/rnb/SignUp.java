@@ -1,10 +1,8 @@
 package org.ymdroid.rnb;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -12,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.json.JSONObject;
+import org.ymdroid.rnb.page.Join_nextpage;
 
 public class SignUp extends FragmentActivity {
     HTTPUtil httpUtil = new HTTPUtil();
@@ -41,8 +40,26 @@ public class SignUp extends FragmentActivity {
         spinner.setVisibility(View.GONE);
     }
 
+    public void NextButtonClicked(View v)throws Exception
+    {
+        Intent i = new Intent(SignUp.this, Join_nextpage.class);
+        startActivity(i);
+        finish();
+        Toast.makeText(getApplicationContext(), "다음으로 넘어갑니다",Toast.LENGTH_LONG).show();
+        //다음으로 넘어가기 전에 일단 아이디랑 비밀번호, 이메일은 확인하기!
+    }
 
 
+    /*OK는 다음 페이지에서 완료*/
+              /*
+                //test용
+                obj.put("user_id", email.getText().toString());
+                obj.put("gender", 1);
+                obj.put("phone", "010-0000-0000");
+                obj.put("verify", "verified");
+                */
+
+    /*
     public void OkButtonClicked(View v) throws Exception {
 
         String passwd = password.getText().toString();
@@ -56,18 +73,10 @@ public class SignUp extends FragmentActivity {
                 confirmPasswd.setTextColor(Color.BLACK);
                 obj = new JSONObject();
 
-                obj.put("email", email.getText().toString());
-                obj.put("name", name.getText().toString());
+                obj.put("uemail", email.getText().toString());
+                obj.put("uname", name.getText().toString());
                 //obj.put("birth",birth.getText().toString());
-                obj.put("password", passwd);
-
-                /*
-                //test용
-                obj.put("user_id", email.getText().toString());
-                obj.put("gender", 1);
-                obj.put("phone", "010-0000-0000");
-                obj.put("verify", "verified");
-                */
+                obj.put("upasswd", passwd);
 
                 Log.e("TEST", "obj String : " + obj.toString());
 
@@ -104,15 +113,7 @@ public class SignUp extends FragmentActivity {
             Toast.makeText(getApplicationContext(), "비밀번호를 다시 입력해주세요.", Toast.LENGTH_LONG).show();
         }
     }
-
-    public void MatrixTime(int delayTime){
-        long saveTime = System.currentTimeMillis();
-        long currTime = 0;
-        while( currTime - saveTime < delayTime){
-            currTime = System.currentTimeMillis();
-        }
-    }
-
+*/
     public void CancelButtonClicked(View v){
         finish();
     }

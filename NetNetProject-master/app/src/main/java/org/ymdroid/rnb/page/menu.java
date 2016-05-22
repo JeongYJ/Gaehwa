@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import org.ymdroid.rnb.R;
 
-public class menu extends FragmentActivity {
+public class Menu extends FragmentActivity {
     private ArrayAdapter<String> mSpinnerAdapter = null;
 
     @Override
@@ -27,17 +27,21 @@ public class menu extends FragmentActivity {
     }
 
     public void cosmetic_info_click(View v) {
-        Intent i = new Intent(menu.this, cosmetic_category.class);
+        Intent i = new Intent(Menu.this, Cosmetic_category.class);
         startActivity(i);
         Toast.makeText(getApplicationContext(), "화장품정보",Toast.LENGTH_LONG).show();
 
     }
 
     public void cosmetic_ingredient_click(View v) {
+        Intent i = new Intent(Menu.this, Cosmetic_ingredient.class);
+        startActivity(i);
         Toast.makeText(getApplicationContext(), "화장품성분표소개",Toast.LENGTH_LONG).show();
     }
 
     public void mypage_click(View v) {
+        Intent i = new Intent(Menu.this, Mypage.class);
+        startActivity(i);
         Toast.makeText(getApplicationContext(), "마이페이지",Toast.LENGTH_LONG).show();
     }
 

@@ -103,11 +103,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_next_orig"
-            android:id="@+id/bt_ok"
+            android:id="@+id/bt_next"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/et_password"
             android:layout_alignEnd="@+id/et_password"
-            android:onClick="OkButtonClicked"/>
+            android:onClick="NextButtonClicked"/>
 
     </LinearLayout>
 

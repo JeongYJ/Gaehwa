@@ -21,8 +21,10 @@
         </activity>
         <activity android:name=".event.Splash" />
         <activity android:name=".SignUp" />
-        <activity android:name=".page.menu" />
-        <activity android:name=".page.cosmetic_category" />
+        <activity android:name=".page.Menu" />
+        <activity android:name=".page.Cosmetic_category" />
+        <activity android:name=".page.Join_nextpage"/>
+
     </application>
 
 

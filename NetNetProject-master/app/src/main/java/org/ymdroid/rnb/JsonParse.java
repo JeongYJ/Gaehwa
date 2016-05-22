@@ -11,15 +11,15 @@ public class JsonParse {
     public JsonParse(){}
 
     public boolean StatusJsonParse(String data){
-        boolean UserCheck = false;
+        boolean status = false;
         try {
             JSONObject  jsonRootObject = new JSONObject(data);
-            UserCheck =jsonRootObject.optBoolean("status");
-            return UserCheck;
+            status =jsonRootObject.optBoolean("status");
+            return status;
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return UserCheck;
+        return status;
     }
 
     public void getUserInfo(String res){
@@ -27,9 +27,9 @@ public class JsonParse {
             JSONObject  jsonRootObject = new JSONObject(res);
             JSONObject data =jsonRootObject.optJSONObject("data");
             UserInfo userInfo = UserInfo.getInstance();
-            String user_id= data.optString("user_id");
-            String password= data.optString("password");
-            String name= data.optString("name");
+            String user_id= data.optString("uemail");
+            String password= data.optString("upasswd");
+            String name= data.optString("uname");
             //String birth= data.optString("birth");
             userInfo.setUserData(user_id, password,name);
         } catch (JSONException e) {

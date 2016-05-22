@@ -1,23 +1,15 @@
 package org.ymdroid.rnb;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.Window;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.ymdroid.rnb.event.Splash;
-import org.ymdroid.rnb.page.menu;
-
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import org.ymdroid.rnb.page.*;
 
 public class Login extends FragmentActivity {
     private static final String TAG = "DEBUG";
@@ -40,6 +32,11 @@ public class Login extends FragmentActivity {
 
     public void LoginButtonClicked(View v) throws Exception {
 
+        Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_LONG).show();
+        Intent i = new Intent(Login.this, Menu.class);
+        startActivity(i);
+
+        /*
         spinner.setVisibility(View.VISIBLE);
         Thread thread = new Thread() {
             public void run() {
@@ -50,18 +47,18 @@ public class Login extends FragmentActivity {
         };
         thread.start();
         thread.join();
-
         spinner.setVisibility(View.GONE);
         Log.e(TAG, "result : " + res);
         if (Json.StatusJsonParse(res)) {
             Json.getUserInfo(res);
             Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(Login.this, menu.class);
+            Intent i = new Intent(Login.this, Menu.class);
             startActivity(i);
             finish();
         } else {
             Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_LONG).show();
         }
+        */
     }
 
     public void SignUpButtonClicked(View v) {
