@@ -14,17 +14,15 @@ import android.widget.Toast;
 import org.ymdroid.rnb.Login;
 import org.ymdroid.rnb.R;
 import org.ymdroid.rnb.event.Join_Listener;
-import org.ymdroid.rnb.event.ListAllergyAdapter;
+import org.ymdroid.rnb.event.ListMypageAdapter;
 import org.ymdroid.rnb.event.SwipeDismissListViewTouchListener;
 
-import java.util.Queue;
-
 /**
- * 만약 중간에 취소된다면, User Table에 가장 나중에 저장된 아이디 지우기
+ * Created by yj on 16. 5. 22..
  */
-public class Join_nextpage  extends FragmentActivity {
+public class Mypage_Userinfo   extends FragmentActivity {
 
-    private static final String TAG = "Join_nextpage";
+    private static final String TAG = "Mypage_UserInfo";
     CheckBox cb_oily_skin;
     CheckBox cb_combination_skin;
     CheckBox cb_dry_skin;
@@ -32,31 +30,31 @@ public class Join_nextpage  extends FragmentActivity {
     CheckBox cb_sensitive_skin;
     Spinner spinner;
     ArrayAdapter adapter;
-  //  private ArrayAdapter<String> mSpinnerAdapter = null;
+    //  private ArrayAdapter<String> mSpinnerAdapter = null;
     private ListView mListView = null;
-    private ListAllergyAdapter mAdapter = null;
+    private ListMypageAdapter mAdapter = null;
 
     int[] listArr = {0,0,0,0,0,0,0,0,0,0,0};
-    Queue<Integer> listCheck;
+
     //private ArrayAdapter<String> mSpinnerAdapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join_nextpage);
+        setContentView(R.layout.activity_mypage_userinfo);
 
         for(int i=0; i<listArr.length; i++)
         {
             listArr[i] = 0;
         }
-        cb_oily_skin = (CheckBox)findViewById(R.id.cb_oily_skin);
-        cb_combination_skin = (CheckBox)findViewById(R.id.cb_combination_skin);
-        cb_dry_skin = (CheckBox)findViewById(R.id.cb_dry_skin);
-        cb_normal_skin = (CheckBox)findViewById(R.id.cb_normal_skin);
-        cb_sensitive_skin = (CheckBox)findViewById(R.id.cb_sensitive_skin);
+        cb_oily_skin = (CheckBox)findViewById(R.id.cb_oily_skin2);
+        cb_combination_skin = (CheckBox)findViewById(R.id.cb_combination_skin2);
+        cb_dry_skin = (CheckBox)findViewById(R.id.cb_dry_skin2);
+        cb_normal_skin = (CheckBox)findViewById(R.id.cb_normal_skin2);
+        cb_sensitive_skin = (CheckBox)findViewById(R.id.cb_sensitive_skin2);
 
 
-        spinner = (Spinner) findViewById(R.id.spinner_allergy);
+        spinner = (Spinner) findViewById(R.id.spinner_allergy2);
         spinner.setOnItemSelectedListener(new Join_Listener());
 
         spinner.setPrompt(getResources().getString(R.string.allergy_prompt));
@@ -66,9 +64,9 @@ public class Join_nextpage  extends FragmentActivity {
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new Join_Listener());
 
-        mListView = (ListView) findViewById(R.id.listView2);
+        mListView = (ListView) findViewById(R.id.userinfo_listView);
 
-        mAdapter = new ListAllergyAdapter(this);
+        mAdapter = new ListMypageAdapter(this);
         mListView.setAdapter(mAdapter);
 
         if(mListView!=null) {
@@ -85,7 +83,7 @@ public class Join_nextpage  extends FragmentActivity {
                                     for (int position : reverseSortedPositions) {
                                         mAdapter.remove(position);
                                         Log.d(TAG,"position :" + position);
-                                       // listArr[] = 0; //position이 아니라.. 지웠던 걸 찾아가야댐
+                                        listArr[position] = 0;
                                     }
                                     mAdapter.notifyDataSetChanged();
                                 }
@@ -95,22 +93,22 @@ public class Join_nextpage  extends FragmentActivity {
         }
     }
 
-    public void CancelButtonClicked2(View v)throws Exception
+    public void CancelButtonClicked3(View v)throws Exception
     {
-        Intent i = new Intent(Join_nextpage.this, Login.class);
+        Intent i = new Intent(Mypage_Userinfo.this, Login.class);
         startActivity(i);
         finish();
         Toast.makeText(getApplicationContext(), "회원 가입을 취소하고 로그인 화면으로 이동합니다.",Toast.LENGTH_LONG).show();
     }
 
-    public void PlusButtonClicked(View v)throws Exception
+    public void PlusButtonClicked2(View v)throws Exception
     {
         //spinner 값 누를 때 마다 리스트에 넣어주기
         int index = spinner.getSelectedItemPosition();
         Log.d(TAG,"index = " + index);
         String toastMessage = insertItem(index+1);
         //Toast.makeText(Join_nextpage.this, toastMessage, Toast.LENGTH_SHORT).show();
-        adapter.notifyDataSetChanged() ;
+        mAdapter.notifyDataSetChanged();
     }
 
     public String insertItem(int index)
@@ -123,7 +121,6 @@ public class Join_nextpage  extends FragmentActivity {
         }
         else {
             listArr[index - 1] = 1;
-            listCheck.add(index);
             switch (index) {
                 case 1: {
                     toastMessage = "옻과 같은 면역계가 이물질로 인식하는 것에 피부가 닿기 때문에 피부가 빨갛고 가렵고 진물 발생";
@@ -185,20 +182,14 @@ public class Join_nextpage  extends FragmentActivity {
         return toastMessage;
     }
 
-    public void OkButtonClicked(View v)throws Exception
+    public void OkButtonClicked2(View v)throws Exception
     {
         //콤보박스 내용 삽입
         //리스트에 삽입
-        try {
-            Intent i = new Intent(Join_nextpage.this, Menu.class);
-            startActivity(i);
-            finish();
-            Toast.makeText(getApplicationContext(), "회원 가입을 완료합니다.", Toast.LENGTH_LONG).show();
-        }
-        catch(Exception ex)
-        {
-            Log.d(TAG,ex.toString());
-        }
+        Intent i = new Intent(Mypage_Userinfo.this, Menu.class);
+        startActivity(i);
+        finish();
+        Toast.makeText(getApplicationContext(), "회원 가입을 완료합니다.",Toast.LENGTH_LONG).show();
     }
 
 }

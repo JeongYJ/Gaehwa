@@ -9,9 +9,62 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".page.Menu"
     android:focusable="true"
-    android:background="@drawable/gaehwa_mypage">
+    android:background="@drawable/gaehwa_mypage_no">
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="3dp"
+        android:padding="5dp"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="피부 타입 선택"
+        android:gravity="left"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="자신의 피부에 맞는 타입을 선택하세요. *중복가능"
+        android:textColor="#787878"
+        android:id="@+id/textView2"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="left" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/btn_mypage_userinfo"
+            android:onClick="UserinfoButtonClicked"
+            android:layout_marginTop="122dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+    </LinearLayout>
     <!--비밀번호 변경-->
+
+
     <!--사용자 정보 변경-->
+
 
 </RelativeLayout>

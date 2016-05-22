@@ -12,3 +12,10 @@ class ViewHolder{
     public TextView mText;
     public TextView mDate;
 }
+
+class ViewHolder2
+{
+    public TextView mText;
+    public TextView mDate;
+}
+
