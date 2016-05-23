@@ -34,8 +34,8 @@ public class Menu extends FragmentActivity {
     }
 
     public void cosmetic_ingredient_click(View v) {
-        Intent i = new Intent(Menu.this, Cosmetic_ingredient.class);
-        startActivity(i);
+      //  Intent i = new Intent(Menu.this, Cosmetic_ingredient.class);
+      //  startActivity(i);
         Toast.makeText(getApplicationContext(), "화장품성분표소개",Toast.LENGTH_LONG).show();
     }
 

@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import org.ymdroid.rnb.event.Splash;
-import org.ymdroid.rnb.page.*;
+import org.ymdroid.rnb.page.Menu;
 
 public class Login extends FragmentActivity {
     private static final String TAG = "DEBUG";
@@ -17,17 +17,20 @@ public class Login extends FragmentActivity {
     private ProgressBar spinner;
     HTTPUtil http = new HTTPUtil();
     JsonParse Json = new JsonParse();
+    EditText user_email;
+    EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
-        startActivity(new Intent(this, Splash.class));
+        //startActivity(new Intent(this, Splash.class));
 
         spinner = (ProgressBar) findViewById(R.id.progressBar);
         spinner.setVisibility(View.GONE);
-
+        user_email = (EditText)findViewById(R.id.user_Email);
+        password = (EditText)findViewById(R.id.password);
     }
 
     public void LoginButtonClicked(View v) throws Exception {

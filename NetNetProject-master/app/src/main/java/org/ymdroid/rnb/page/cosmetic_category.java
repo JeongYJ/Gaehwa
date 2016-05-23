@@ -1,6 +1,7 @@
 package org.ymdroid.rnb.page;
 
-import android.graphics.drawable.ColorDrawable;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
@@ -32,36 +33,28 @@ public class Cosmetic_category extends ActionBarActivity implements AdapterView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cosmetic_category);
-        getSupportActionBar().setTitle("카테고리");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0x00000000));
+        getSupportActionBar().setTitle("화장품 카테고리");
+        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0x00000000));
 
         mListView = (ListView) findViewById(R.id.listView);
 
         mAdapter = new ListViewAdapter(this);
         mListView.setAdapter(mAdapter);
 
-        mAdapter.addItem(getResources().getDrawable(R.drawable.ic_launcher),
-                "화장품1",
-                "2016-05-18");
-        mAdapter.addItem(getResources().getDrawable(R.drawable.ic_launcher),
-                "화장품2",
-                "2016-05-01");
-        mAdapter.addItem(getResources().getDrawable(R.drawable.ic_launcher),
-                "화장품3",
-                "2016-05-04");
-        mAdapter.addItem(null,
-                "화장품4",
-                "2016-05-15");
+        mAdapter.addItem(getResources().getDrawable(R.drawable.sample_image),
+                "닥터솔루션 아큐어 클래리파잉 에멀전",
+                "케어존");
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 ListData mData = mAdapter.mListData.get(position);
                 Toast.makeText(Cosmetic_category.this, mData.mTitle, Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Cosmetic_category.this, Cosmetic_info.class);
+                startActivity(i);
+                finish();
             }
         });
-
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,6 +67,8 @@ public class Cosmetic_category extends ActionBarActivity implements AdapterView.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        spinner.setBackgroundColor(Color.parseColor("#ffffff"));
+
 
         return true;
     }

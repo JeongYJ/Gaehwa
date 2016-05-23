@@ -17,12 +17,10 @@ import org.ymdroid.rnb.event.Join_Listener;
 import org.ymdroid.rnb.event.ListAllergyAdapter;
 import org.ymdroid.rnb.event.SwipeDismissListViewTouchListener;
 
-import java.util.Queue;
-
 /**
  * 만약 중간에 취소된다면, User Table에 가장 나중에 저장된 아이디 지우기
  */
-public class Join_nextpage  extends FragmentActivity {
+public class Join_nextpage extends FragmentActivity {
 
     private static final String TAG = "Join_nextpage";
     CheckBox cb_oily_skin;
@@ -37,7 +35,7 @@ public class Join_nextpage  extends FragmentActivity {
     private ListAllergyAdapter mAdapter = null;
 
     int[] listArr = {0,0,0,0,0,0,0,0,0,0,0};
-    Queue<Integer> listCheck;
+    //Queue<Integer> listCheck;
     //private ArrayAdapter<String> mSpinnerAdapter = null;
 
     @Override
@@ -123,7 +121,7 @@ public class Join_nextpage  extends FragmentActivity {
         }
         else {
             listArr[index - 1] = 1;
-            listCheck.add(index);
+            //listCheck.add(index);
             switch (index) {
                 case 1: {
                     toastMessage = "옻과 같은 면역계가 이물질로 인식하는 것에 피부가 닿기 때문에 피부가 빨갛고 가렵고 진물 발생";
@@ -200,5 +198,6 @@ public class Join_nextpage  extends FragmentActivity {
             Log.d(TAG,ex.toString());
         }
     }
+
 
 }

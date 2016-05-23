@@ -13,17 +13,20 @@
         android:label="개화"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login">
+        <activity android:name=".event.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".event.Splash" />
+        <activity android:name=".Login" />
         <activity android:name=".SignUp" />
         <activity android:name=".page.Menu" />
         <activity android:name=".page.Cosmetic_category" />
         <activity android:name=".page.Join_nextpage"/>
+        <activity android:name=".page.Cosmetic_info"/>
+        <activity android:name=".page.Mypage"/>
+        <activity android:name=".page.Mypage_Userinfo"/>
 
     </application>
 

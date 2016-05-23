@@ -2,7 +2,7 @@ package org.ymdroid.rnb.page;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,7 +11,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import org.ymdroid.rnb.Login;
 import org.ymdroid.rnb.R;
 import org.ymdroid.rnb.event.Join_Listener;
 import org.ymdroid.rnb.event.ListMypageAdapter;
@@ -20,7 +19,7 @@ import org.ymdroid.rnb.event.SwipeDismissListViewTouchListener;
 /**
  * Created by yj on 16. 5. 22..
  */
-public class Mypage_Userinfo   extends FragmentActivity {
+public class Mypage_Userinfo extends ActionBarActivity {
 
     private static final String TAG = "Mypage_UserInfo";
     CheckBox cb_oily_skin;
@@ -42,7 +41,7 @@ public class Mypage_Userinfo   extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage_userinfo);
-
+        getSupportActionBar().setTitle("사용자 정보 변경");
         for(int i=0; i<listArr.length; i++)
         {
             listArr[i] = 0;
@@ -95,10 +94,10 @@ public class Mypage_Userinfo   extends FragmentActivity {
 
     public void CancelButtonClicked3(View v)throws Exception
     {
-        Intent i = new Intent(Mypage_Userinfo.this, Login.class);
+        Intent i = new Intent(Mypage_Userinfo.this, Menu.class);
         startActivity(i);
         finish();
-        Toast.makeText(getApplicationContext(), "회원 가입을 취소하고 로그인 화면으로 이동합니다.",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "메인 화면으로 돌아갑니다.",Toast.LENGTH_LONG).show();
     }
 
     public void PlusButtonClicked2(View v)throws Exception
@@ -189,7 +188,7 @@ public class Mypage_Userinfo   extends FragmentActivity {
         Intent i = new Intent(Mypage_Userinfo.this, Menu.class);
         startActivity(i);
         finish();
-        Toast.makeText(getApplicationContext(), "회원 가입을 완료합니다.",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "메인 화면으로 돌아갑니다.",Toast.LENGTH_LONG).show();
     }
 
 }
