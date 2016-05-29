@@ -22,7 +22,7 @@ import org.ymdroid.rnb.event.ListViewAdapter;
  * Created by kimminyoung on 2016-05-05.
  */
 public class Cosmetic_category extends ActionBarActivity implements AdapterView.OnItemSelectedListener
-        {
+{
 
 
     private ArrayAdapter<String> mSpinnerAdapter = null;
