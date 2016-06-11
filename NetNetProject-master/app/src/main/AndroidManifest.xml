@@ -28,6 +28,8 @@
         <activity android:name=".page.Mypage"/>
         <activity android:name=".page.Mypage_Userinfo"/>
         <activity android:name=".page.MyPage_ChangePW"/>
+        <activity android:name=".page.Review_page"/>
+        <activity android:name=".page.Cosmetic_ingredient"/>
 
     </application>
 

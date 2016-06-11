@@ -18,6 +18,15 @@ public class ListData {
     // 날짜
     public String mDate;
 
+    //별점
+    public Drawable mScore;
+
+    //사용자이름
+    public String mName;
+
+    //리뷰 내용
+    public String mText;
+
     /**
      * 알파벳 이름으로 정렬
      */

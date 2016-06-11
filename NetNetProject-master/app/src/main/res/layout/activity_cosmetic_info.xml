@@ -195,7 +195,7 @@
         android:padding="15dp"
         android:layout_marginTop="10dp"
         android:background="@color/white"
-        >
+        android:onClick="reviewPageOnClicked">
 
         <TextView
             android:layout_width="match_parent"
@@ -218,30 +218,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="작성자 이름 "
+                android:text="User10"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
-                android:layout_marginBottom="5dp"
                 android:id="@+id/tv_review_user" />
 
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" ★★★★☆ "
+                android:background="@drawable/score_five"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
-                android:layout_marginBottom="5dp"
                 android:id="@+id/tv_review_score" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="내용"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="리뷰입니다."
                 android:gravity="center"
-                android:layout_marginBottom="5dp"
                 android:id="@+id/tv_review_text" />
+
         </LinearLayout>
     </LinearLayout>
 
