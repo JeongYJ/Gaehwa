@@ -4,22 +4,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-
-
 public class JsonParse {
 
     public JsonParse(){}
 
     public boolean StatusJsonParse(String data){
-        boolean status = false;
+        boolean state = false;
+        if(data==null)
+            return false;
         try {
             JSONObject  jsonRootObject = new JSONObject(data);
-            status =jsonRootObject.optBoolean("status");
-            return status;
+            state =jsonRootObject.optBoolean("state");
+            return state;
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return status;
+        return state;
     }
 
     public void getUserInfo(String res){
@@ -27,13 +27,15 @@ public class JsonParse {
             JSONObject  jsonRootObject = new JSONObject(res);
             JSONObject data =jsonRootObject.optJSONObject("data");
             UserInfo userInfo = UserInfo.getInstance();
-            String user_id= data.optString("uemail");
-            String password= data.optString("upasswd");
-            String name= data.optString("uname");
-            //String birth= data.optString("birth");
-            userInfo.setUserData(user_id, password,name);
+            String user_id= data.optString("user_id");
+            String password= data.optString("password");
+            String name= data.optString("name");
+            userInfo.setUserData(user_id, password, name);
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
+
+
+
 }

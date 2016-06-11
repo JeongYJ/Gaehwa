@@ -8,4 +8,6 @@ import java.lang.String;public class Key {
 	public static String rsltCode = "rsltCode";
 	public static String rsltMsg = "rsltMsg";
 	public static String result = "result";
+
+
 }

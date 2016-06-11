@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -129,63 +129,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:background="#4ea675"
-        android:id="@+id/linearLayout2"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="기존에 사용해본 제품인가요?"
-            android:gravity="left"
-            android:textColor="@color/white"
-            android:layout_marginBottom="5dp"
-            android:id="@+id/tv_cosinfo_question" />
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="YES"
-                android:background="@color/white"
-                android:onClick="QuestionYesButtonClicked"
-                android:id="@+id/btn_question_yes"
-                android:layout_marginRight="30dp"
-                android:layout_below="@+id/linearLayout2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="NO"
-                android:id="@+id/btn_question_no"
-                android:onClick="QuestionNoButtonClicked"
-                android:background="@color/white"
-                android:layout_alignBottom="@+id/button"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

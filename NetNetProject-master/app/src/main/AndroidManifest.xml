@@ -27,6 +27,7 @@
         <activity android:name=".page.Cosmetic_info"/>
         <activity android:name=".page.Mypage"/>
         <activity android:name=".page.Mypage_Userinfo"/>
+        <activity android:name=".page.MyPage_ChangePW"/>
 
     </application>
 

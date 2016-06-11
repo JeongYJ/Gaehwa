@@ -1,64 +1,39 @@
 package org.ymdroid.rnb;
 
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+import android.accounts.NetworkErrorException;
+import android.util.Log;
+
+import java.io.IOException;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 
 /**
  * Created by kimminyoung on 2016-05-13.
  */
-public class HTTPUtil  extends  Thread{
-    private static final String TAG ="DEBUG" ;
+public class HTTPUtil extends Thread {
+    private static final String TAG = "HTTPUtil";
     OkHttpClient client = new OkHttpClient();
     Request request;
     Response response;
 
-
-
-    final String base_url  = "http://115.68.182.138:22";
-
-
-    public HTTPUtil(){ }
-
-    public String  signin(String user_id,String password ){
-        try {
-            RequestBody query = new FormEncodingBuilder()
-                    .add("uemail", user_id)
-                    .add("upasswd", password)
-                    .build();
-            request = new Request.Builder()
-                    .url(base_url + "/var/www/html")
-                    .post(query)
-                    .build();
-            response = client.newCall(request).execute();
-
-            return  response.body().string();
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally{
-        }
-        return null;
+    final String base_url = "http://115.68.182.138";
+    public HTTPUtil() {
     }
 
-    public String  signUp(String jsonString){
-        try {
-            RequestBody query =RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonString);
-            request = new Request.Builder()
-                    .url(base_url + "/var/www/html")
-                    .post(query)
-                    .build();
-            response = client.newCall(request).execute();
-            return  response.body().string();
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally{
-        }
-        return null;
+    public String connection(String url, String jsonString) throws IOException, NetworkErrorException, Exception {
+        RequestBody query = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonString);
+        Log.e(TAG, "url : "+base_url+url);
+        request = new Request.Builder()
+                .url(base_url + url)
+                .post(query)
+                .build();
+        response = client.newCall(request).execute();
+        return response.body().string();
     }
 
 

@@ -1,17 +1,12 @@
 package org.ymdroid.rnb.page;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.ymdroid.rnb.R;
@@ -21,7 +16,7 @@ import org.ymdroid.rnb.event.ListViewAdapter;
 /**
  * Created by kimminyoung on 2016-05-05.
  */
-public class Cosmetic_category extends ActionBarActivity implements AdapterView.OnItemSelectedListener
+public class Cosmetic_category extends ActionBarActivity
 {
 
 
@@ -55,40 +50,6 @@ public class Cosmetic_category extends ActionBarActivity implements AdapterView.
                 finish();
             }
         });
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_menu_bar, menu);
-
-        MenuItem item = menu.findItem(R.id.spinner);
-        Spinner spinner = (Spinner) MenuItemCompat.getActionView(item);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.array_list, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-        spinner.setBackgroundColor(Color.parseColor("#ffffff"));
-
-
-        return true;
-    }
-
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.spinner) {
-            Toast.makeText(this, "액션버튼 이벤트", Toast.LENGTH_SHORT).show();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-    }
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
     }
 
 }
