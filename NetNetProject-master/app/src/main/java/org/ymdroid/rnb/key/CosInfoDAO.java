@@ -10,10 +10,12 @@ public class CosInfoDAO {
 
     private volatile static CosInfoDAO Instance = null;
     public ArrayList<CosInfo> cosInfos;
-
+    public ArrayList<Review> reviews;
+    public ArrayList<ArrayList<Review>> rvlist;
     //public String birth;
 
     private CosInfoDAO(){
+        rvlist = new ArrayList<ArrayList<Review>>();
         cosInfos = new ArrayList<CosInfo>();
         makeTable();
     }
@@ -113,9 +115,10 @@ public class CosInfoDAO {
         A.danger[22] = 1;
         A.danger[23] = 8;
 
-        A.rv.add(new Review("UserA", 3, "SoSo"));
-        A.rv.add(new Review("UserB", 4, "좋아요"));
-
+        reviews = new ArrayList<Review>();
+        reviews.add(new Review("UserA", 3, "SoSo"));
+        reviews.add(new Review("UserB", 4, "좋아요"));
+        A.rv = reviews;
         cosInfos.add(A);
 
 
@@ -203,9 +206,8 @@ public class CosInfoDAO {
         A.danger[22] = 1;
         A.danger[23] = 8;
 
-        A.rv.add(new Review("UserA", 3, "SoSo"));
-        A.rv.add(new Review("UserB", 4, "좋아요"));
-
+        reviews = new ArrayList<Review>();
+        rvlist.add(reviews);
         cosInfos.add(A);
     }
 

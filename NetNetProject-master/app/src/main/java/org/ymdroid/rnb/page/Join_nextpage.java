@@ -67,13 +67,24 @@ public class Join_nextpage extends FragmentActivity {
         cb_normal_skin = (CheckBox)findViewById(R.id.cb_normal_skin);
         cb_sensitive_skin = (CheckBox)findViewById(R.id.cb_sensitive_skin);
 
+        try {
+            if(user_info.allergy == null)
+            {
+                for (int i = 0; i < user_info.allergy.length; i++) {
+                    user_info.allergy[i] = false;
+                }
+            }
 
-        for(int i=0; i<user_info.allergy.length; i++)
-        {
-            all_old[i] = user_info.allergy[i];
-            user_info.allergy[i] = false;
+            for (int i = 0; i < user_info.allergy.length; i++) {
+
+                all_old[i] = user_info.allergy[i];
+                user_info.allergy[i] = false;
+            }
         }
-
+        catch(Exception ex)
+        {
+            Log.e(TAG,"allergy = " + ex.toString());
+        }
 
         spinner = (Spinner) findViewById(R.id.spinner_allergy);
         spinner.setOnItemSelectedListener(new Join_Listener());
