@@ -218,7 +218,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="User10"
+                android:text="평균 :"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
                 android:id="@+id/tv_review_user" />
@@ -227,7 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:background="@drawable/good"
+                android:background="@drawable/score_five"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
                 android:id="@+id/tv_review_score" />
@@ -236,7 +236,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="리뷰입니다."
+                android:text="리뷰점수입니다."
                 android:gravity="center"
                 android:id="@+id/tv_review_text" />
 

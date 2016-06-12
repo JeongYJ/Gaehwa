@@ -1,6 +1,6 @@
 package org.ymdroid.rnb.event;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
 
 import java.text.Collator;
 import java.util.Comparator;
@@ -10,7 +10,7 @@ import java.util.Comparator;
  */
 public class ListData {
     // 아이콘
-    public Drawable mIcon;
+    public Bitmap mIcon;
 
     // 제목
     public String mTitle;
@@ -19,7 +19,7 @@ public class ListData {
     public String mDate;
 
     //별점
-    public Drawable mScore;
+    public Bitmap mScore;
 
     //사용자이름
     public String mName;
