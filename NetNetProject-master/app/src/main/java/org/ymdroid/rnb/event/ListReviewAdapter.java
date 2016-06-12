@@ -73,9 +73,9 @@ public class ListReviewAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.listview_review, null);
 
-            holder.mName = (TextView) convertView.findViewById(R.id.mName);
-            holder.mScore = (ImageView) convertView.findViewById(R.id.mScore);
-            holder.mText = (TextView) convertView.findViewById(R.id.mText);
+            holder.mName = (TextView) convertView.findViewById(R.id.review_mName);
+            holder.mScore = (ImageView) convertView.findViewById(R.id.review_mScore);
+            holder.mText = (TextView) convertView.findViewById(R.id.review_mText);
 
             convertView.setTag(holder);
         }else{

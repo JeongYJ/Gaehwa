@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.ListView;
 
+
 import org.ymdroid.rnb.R;
 import org.ymdroid.rnb.event.ListReviewAdapter;
 import org.ymdroid.rnb.key.Review;
@@ -38,7 +39,7 @@ public class Review_page extends ActionBarActivity {
         Review rv = new Review();
         double d1 = Math.random();
         //랜덤으로 점수 출력 (0~5)
-
+/*
         for(int i=0; i<10; i++)
         {
             rv.name[i] = "User "+(i+1);
@@ -90,7 +91,9 @@ public class Review_page extends ActionBarActivity {
                 }
 
             }
+
         }
+        */
     }
 
 }

@@ -12,7 +12,6 @@ public class CosInfo {
     public int highPrice;
     public int[] rc; //추천화장품 인덱스
     public int code; //바코드
-
     public String[] krIng; //한글이름
     public String[] enIng; //영문이름
     public int[] danger; //위험도

@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.ymdroid.rnb">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,7 @@
         <activity android:name=".event.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,15 +24,14 @@
         <activity android:name=".SignUp" />
         <activity android:name=".page.Menu" />
         <activity android:name=".page.Cosmetic_category" />
-        <activity android:name=".page.Join_nextpage"/>
-        <activity android:name=".page.Cosmetic_info"/>
-        <activity android:name=".page.Mypage"/>
-        <activity android:name=".page.Mypage_Userinfo"/>
-        <activity android:name=".page.MyPage_ChangePW"/>
-        <activity android:name=".page.Review_page"/>
-        <activity android:name=".page.Cosmetic_ingredient"/>
-
+        <activity android:name=".page.Join_nextpage" />
+        <activity android:name=".page.Cosmetic_info" />
+        <activity android:name=".page.Mypage" />
+        <activity android:name=".page.Mypage_Userinfo" />
+        <activity android:name=".page.MyPage_ChangePW" />
+        <activity android:name=".page.Review_page" />
+        <activity android:name=".page.Cosmetic_ingredient" />
+        <activity android:name=".page.BarcodePageActivity"></activity>
     </application>
-
 
 </manifest>

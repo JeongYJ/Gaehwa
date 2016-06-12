@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/mName"
+            android:id="@+id/review_mName"
             android:text="사용자이름"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -21,14 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:id="@+id/mScore"
-            android:background="@drawable/score_zero"/>
+            android:id="@+id/review_mScore"
+            android:background="@drawable/good"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/mText"
+            android:id="@+id/review_mText"
             android:layout_marginLeft="10dp"
             android:text="내용"
             android:textAppearance="?android:attr/textAppearanceMedium"
