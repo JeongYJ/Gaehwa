@@ -19,8 +19,6 @@ public class Menu extends FragmentActivity {
     }
 
     public void capture_barcode_click(View v) {
-        Intent i = new Intent(Menu.this, BarcodePageActivity.class);
-        startActivity(i);
         Toast.makeText(getApplicationContext(), "바코드찍기",Toast.LENGTH_LONG).show();
     }
 
@@ -32,6 +30,7 @@ public class Menu extends FragmentActivity {
         Intent i = new Intent(Menu.this, Cosmetic_category.class);
         startActivity(i);
         Toast.makeText(getApplicationContext(), "화장품정보",Toast.LENGTH_LONG).show();
+
     }
 
     public void cosmetic_ingredient_click(View v) {

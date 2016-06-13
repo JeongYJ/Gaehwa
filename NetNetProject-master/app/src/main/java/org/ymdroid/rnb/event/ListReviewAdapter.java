@@ -1,7 +1,7 @@
 package org.ymdroid.rnb.event;
 
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +41,7 @@ public class ListReviewAdapter extends BaseAdapter {
         return position;
     }
 
-    public void addItem(String mName, Bitmap mScore, String mText){
+    public void addItem(String mName, Drawable mScore, String mText){
         ListData addInfo = null;
         addInfo = new ListData();
         addInfo.mName = mName;
@@ -84,9 +84,9 @@ public class ListReviewAdapter extends BaseAdapter {
 
         ListData mData = mListData.get(position);
 
-        if (mData.mScore != null) {
+        if (mData.mIcon != null) {
             holder.mScore.setVisibility(View.VISIBLE);
-            holder.mScore.setImageBitmap(mData.mScore);
+            holder.mScore.setImageDrawable(mData.mScore);
         }else{
             holder.mScore.setVisibility(View.GONE);
         }
