@@ -39,7 +39,7 @@ public class CosInfoDAO {
         A.type = "스킨";
         A.lowPrice = 8910;
         A.highPrice = 26180;
-        A.code = "792850136991";
+        A.code = "8809209050036";
         A.krIng[0] = "정제수";
         A.krIng[1] = "부틸렌글라이콜";
         A.krIng[2] = "에탄올";
@@ -501,7 +501,7 @@ public class CosInfoDAO {
         A.name = "라네즈 밸런싱 에멀전 모이스처";
         A.brand = "라네즈";
         A.type = "로션";
-        A.code = "0";
+        A.code = "9789688874103";
         A.lowPrice = 17110;
         A.highPrice = 42530;
         A.krIng[0] = "정제수";
